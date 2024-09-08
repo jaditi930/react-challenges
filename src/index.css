@@ -1,0 +1,87 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.seven-segment-display {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  margin: 20px;
+}
+
+.segment {
+  position: absolute;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+/* Segment on class for lit segments */
+.segment.on {
+  background: red;
+}
+
+/* Each segment's position */
+.segment.a {
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  border-radius: 5px;
+}
+
+.segment.b {
+  top: 10%;
+  right: 0;
+  width: 15%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.segment.c {
+  bottom: 10%;
+  right: 0;
+  width: 15%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.segment.d {
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  border-radius: 5px;
+}
+
+.segment.e {
+  bottom: 10%;
+  left: 0;
+  width: 15%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.segment.f {
+  top: 10%;
+  left: 0;
+  width: 15%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.segment.g {
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 10%;
+  border-radius: 5px;
+  transform: translateY(-50%);
+}
