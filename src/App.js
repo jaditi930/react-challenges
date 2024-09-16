@@ -131,14 +131,124 @@
 
 // export default App;
 
-import Game from "./components/Game";
+// import Game from "./components/Game";
 
-const TOTAL_BOXES = 12;
+// const TOTAL_BOXES = 12;
 
-export default function App() {
+// export default function App() {
+//   return (
+//     <div className="w-full h-screen flex justify-center items-center">
+//       <Game total={TOTAL_BOXES} />
+//     </div>
+//   );
+// }
+
+// import { useNotifications } from "./components/Notifications";
+
+// export default function App() {
+//   const { showNotification } = useNotifications();
+
+//   const handleClick = (e) => {
+//     const { target } = e;
+//     const type = target.getAttribute("data-type");
+
+//     showNotification({
+//       type,
+//       message: `${type} Notification`,
+//     });
+//   };
+
+//   return (
+//     <div className="content">
+//       <h1>Add Notification</h1>
+//       <div className="actions">
+//         <button className="info" onClick={handleClick} data-type="INFO">
+//           Info
+//         </button>
+//         <button className="success" onClick={handleClick} data-type="SUCCESS">
+//           Success
+//         </button>
+//         <button className="warning" onClick={handleClick} data-type="WARNING">
+//           Warning
+//         </button>
+//         <button className="error" onClick={handleClick} data-type="ERROR">
+//           Error
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// import React from "react";
+// import Star from "./components/Star";
+
+// const App = () => {
+//   return <Star n={5} />;
+// };
+
+// export default App;
+
+// import useTimer from "./hooks/useTimer.js";
+
+// export default function App() {
+//   const TOTAL_TIME = 5;
+//   const { isRunning, start, stop, seconds } = useTimer(TOTAL_TIME);
+//   return (
+//     <div>
+//       {isRunning && <div>{seconds}</div>}
+//       {!isRunning && <div>No timer Running</div>}
+//       <button disabled={isRunning} onClick={start}>
+//         Start
+//       </button>
+//       <button disabled={!isRunning} onClick={stop}>
+//         Stop
+//       </button>
+//     </div>
+//   );
+// }
+
+import React from "react";
+import {
+  Accordian,
+  AccordianContent,
+  AccordianItem,
+  AccordianToggle,
+} from "./components/Accordian";
+
+const App = () => {
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <Game total={TOTAL_BOXES} />
-    </div>
+    <Accordian>
+      <AccordianItem id="1">
+        <AccordianToggle>Devtools Tech? 🤔</AccordianToggle>
+        <AccordianContent>
+          The aim with Devtools Tech is to create a platform for Frontend
+          Engineers where we all can improve, invest in ourselves, and grow by
+          learning from high quality real world programming content. This is a
+          platform where you can practice actual interview questions, watch
+          courses, read blogs, and keep track of your progress across various
+          domains and topics.
+        </AccordianContent>
+      </AccordianItem>
+      <AccordianItem id="2">
+        <AccordianToggle>Is it Free?</AccordianToggle>
+        <AccordianContent>
+          Yes, the platform and YouTube both are completely free!
+        </AccordianContent>
+      </AccordianItem>
+      <AccordianItem id="3">
+        <AccordianToggle>Is it Free?</AccordianToggle>
+        <AccordianContent>
+          Yes, the platform and YouTube both are completely free!
+        </AccordianContent>
+      </AccordianItem>
+      <AccordianItem id="4">
+        <AccordianToggle>Is it Free?</AccordianToggle>
+        <AccordianContent>
+          Yes, the platform and YouTube both are completely free!
+        </AccordianContent>
+      </AccordianItem>
+    </Accordian>
   );
-}
+};
+
+export default App;
