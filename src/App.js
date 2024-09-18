@@ -215,40 +215,38 @@ import {
   AccordianToggle,
 } from "./components/Accordian";
 
-const App = () => {
-  return (
-    <Accordian>
-      <AccordianItem id="1">
-        <AccordianToggle>Devtools Tech? 🤔</AccordianToggle>
-        <AccordianContent>
-          The aim with Devtools Tech is to create a platform for Frontend
-          Engineers where we all can improve, invest in ourselves, and grow by
-          learning from high quality real world programming content. This is a
-          platform where you can practice actual interview questions, watch
-          courses, read blogs, and keep track of your progress across various
-          domains and topics.
-        </AccordianContent>
-      </AccordianItem>
-      <AccordianItem id="2">
-        <AccordianToggle>Is it Free?</AccordianToggle>
-        <AccordianContent>
-          Yes, the platform and YouTube both are completely free!
-        </AccordianContent>
-      </AccordianItem>
-      <AccordianItem id="3">
-        <AccordianToggle>Is it Free?</AccordianToggle>
-        <AccordianContent>
-          Yes, the platform and YouTube both are completely free!
-        </AccordianContent>
-      </AccordianItem>
-      <AccordianItem id="4">
-        <AccordianToggle>Is it Free?</AccordianToggle>
-        <AccordianContent>
-          Yes, the platform and YouTube both are completely free!
-        </AccordianContent>
-      </AccordianItem>
-    </Accordian>
-  );
-};
+import ProgressBar from "./components/ProgressBar";
+import MovingCircle from "./components/MovingCircle";
+import CirclesGame from "./components/CircleGame";
+import Pagination from "./components/Pagination";
 
-export default App;
+export default function App() {
+  return (
+    // <Accordian>
+    //   <AccordianItem id="1">
+    //     <AccordianToggle>Is it Free?</AccordianToggle>
+    //     <AccordianContent>
+    //       Yes, the platform and YouTube both are completely free!
+    //     </AccordianContent>
+    //   </AccordianItem>
+    //   <AccordianItem id="2">
+    //     <AccordianToggle>Is it Free?</AccordianToggle>
+    //     <AccordianContent>
+    //       Yes, the platform and YouTube both are completely free!
+    //     </AccordianContent>
+    //   </AccordianItem>
+    //   <AccordianItem id="3">
+    //     <AccordianToggle>Is it Free?</AccordianToggle>
+    //     <AccordianContent>
+    //       Yes, the platform and YouTube both are completely free!
+    //     </AccordianContent>
+    //   </AccordianItem>
+    // </Accordian>
+    <Pagination
+      default_page={3}
+      pages_count={5}
+      sibling_count={0}
+      boundary_count={0}
+    />
+  );
+}

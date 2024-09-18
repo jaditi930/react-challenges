@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import accordianBg from "../accordionBg.svg";
 import { createContext } from "react";
 import { IoIosArrowDown, IoIosArrowUp, IoMdReturnLeft } from "react-icons/io";
+import ProgressBar from "./ProgressBar";
 
 const AccordianContext = createContext({});
 const ItemContext = createContext({});
@@ -24,7 +25,7 @@ const Accordian = ({ children }) => {
         const nextIndex = (currentIndex + 1) % len;
         return itemsRef.current[nextIndex];
       });
-    }, 3000);
+    }, 4000);
   }, [active]);
 
   return (
@@ -40,36 +41,8 @@ const Accordian = ({ children }) => {
   );
 };
 
-const ProgressBar = ({ width }) => {
-  const { active, setActive, itemsRef } = useContext(AccordianContext);
-  const { id } = useContext(ItemContext);
-
-  const isOpen = active === id;
-  if (!isOpen) return;
-  return (
-    <div className="relative bg-gray w-[100%] h-[5px]">
-      <div
-        className="absolute bg-purple-300 h-[5px]"
-        style={{
-          width: `${width}%`,
-        }}
-      ></div>
-    </div>
-  );
-};
-
 const AccordianItem = ({ children, id }) => {
   const { active, setActive, itemsRef } = useContext(AccordianContext);
-
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    if (!active) return;
-    for (let i = 1; i <= 10; i++)
-      setTimeout(() => {
-        setWidth((width) => width + 10);
-      }, 300 * i);
-  }, [active]);
 
   useEffect(() => {
     let new_items = [...itemsRef.current];
@@ -79,7 +52,7 @@ const AccordianItem = ({ children, id }) => {
   return (
     <ItemContext.Provider value={{ id }}>
       <div className="p-3" key={id}>
-        <ProgressBar width={width} />
+        {active === id && <ProgressBar TIME={3} />}
         {children}
       </div>
     </ItemContext.Provider>
